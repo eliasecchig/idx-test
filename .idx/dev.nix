@@ -37,7 +37,7 @@
           uv venv && uv pip install agent-starter-pack
 
           echo "Running agent starter pack creation..."
-          uv run agent-starter-pack create $AGENT_NAME
+          uv run agent-starter-pack create $WS_NAME
 
           echo "Setup complete. Starting interactive shell..."
           exec bash
