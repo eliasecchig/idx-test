@@ -26,7 +26,7 @@
         create-venv = ''
         # Load environment variables from .env file if it exists
         source .env
-        gcloud config set project $GOOGLE_CLOUD_PROJECT
+        gcloud auth login --update-adc
         uv venv && uv pip install agent-starter-pack
         uv run agent-starter-pack create $AGENT_NAME 
         '';
