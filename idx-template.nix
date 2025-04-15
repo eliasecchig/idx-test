@@ -12,6 +12,6 @@
 
     # Remove the template files themselves and any connection to the template's
     # Git repository
-    rm -rf "$out/.git" "$out/idx-template".{nix,json}
+    # rm -rf "$out/.git" "$out/idx-template".{nix,json}
   '';
 }
