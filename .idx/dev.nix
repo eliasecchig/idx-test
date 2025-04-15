@@ -26,8 +26,8 @@
         create-venv = ''
         # Load environment variables from .env file if it exists
         source .env
-        gcloud config set project $GCP_PROJECT_ID
-        gcloud auth application-default set-quota-project $GCP_PROJECT_ID
+        # gcloud config set project $GCP_PROJECT_ID
+        # gcloud auth application-default set-quota-project $GCP_PROJECT_ID
         # python -m venv .venv
         # source .venv/bin/activate
         uv venv && uv pip install agent-starter-pack
