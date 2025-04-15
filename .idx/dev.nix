@@ -22,6 +22,7 @@
       # Runs when a workspace is first created with this `dev.nix` file
       onCreate = {
         create-venv = ''
+        gcloud auth login --update-adc
         python -m venv .venv
         source .venv/bin/activate
         pip install agent-starter-pack uv
