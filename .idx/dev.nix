@@ -9,6 +9,7 @@
   packages = [
     pkgs.python311
     pkgs.python311Packages.pip
+    uv
   ];
   # Sets environment variables in the workspace
   env = {};
@@ -22,11 +23,13 @@
       # Runs when a workspace is first created with this `dev.nix` file
       onCreate = {
         create-venv = ''
-        gcloud auth login --update-adc
-        python -m venv .venv
-        source .venv/bin/activate
-        pip install agent-starter-pack uv
-        agent-starter-pack create my-agent
+        # Load environment variables from .env file if it exists
+        source .env
+         gcloud config set project $GCP_PROJECT_ID
+        # python -m venv .venv
+        # source .venv/bin/activate
+        uv venv && uv pip install agent-starter-pack
+        agent-starter-pack create $AGENT_NAME
         '';
         # Open editors for the following files by default, if they exist:
         default.openFiles = [ ];
