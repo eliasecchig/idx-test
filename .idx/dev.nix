@@ -9,7 +9,7 @@
   packages = [
     pkgs.python311
     pkgs.python311Packages.pip
-    uv
+    pkgs.uv
   ];
   # Sets environment variables in the workspace
   env = {};
