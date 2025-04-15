@@ -29,7 +29,7 @@
         source .env
           echo "Logging into gcloud..."
           echo "Please authenticate with Google Cloud by following the prompts."
-          gcloud auth login --update-adc
+          gcloud auth login --update-adc --brief --quiet
 
           echo "Setting gcloud project..."
           gcloud config set project $GOOGLE_CLOUD_PROJECT
