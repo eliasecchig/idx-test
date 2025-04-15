@@ -14,7 +14,7 @@
 
     # Create .env file with the parameter values
     cat > "$out/.env" << EOF
-    AGENT_NAME=$WS_NAME
+    AGENT_NAME=$AGENT_NAME
     GOOGLE_CLOUD_PROJECT=${google_cloud_project_id}
     EOF
 
