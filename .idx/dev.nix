@@ -28,7 +28,7 @@
         # Load environment variables from .env file if it exists
         source .env
           echo "Logging into gcloud..."
-          gcloud auth login --update-adc --brief
+          gcloud auth login --update-adc --brief --quiet
 
           echo "Setting gcloud project..."
           gcloud config set project $GOOGLE_CLOUD_PROJECT
@@ -37,7 +37,7 @@
           uv venv && uv pip install agent-starter-pack
 
           echo "Running agent starter pack creation..."
-          uv run agent-starter-pack create $WS_NAME
+          uv run agent-starter-pack create $AGENT_NAME
 
           echo "Setup complete. Starting interactive shell..."
           exec bash
