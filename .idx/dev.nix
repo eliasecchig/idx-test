@@ -3,7 +3,7 @@
 # see: https://firebase.google.com/docs/studio/customize-workspace
 { pkgs, ... }: {
   # Which nixpkgs channel to use.
-  channel = "stable-23.11"; # or "unstable"
+  channel = "stable-24.11"; # or "unstable"
 
   # Use https://search.nixos.org/packages to find packages
   packages = [
@@ -28,7 +28,7 @@
          gcloud config set project $GCP_PROJECT_ID
         # python -m venv .venv
         # source .venv/bin/activate
-        uv venv && uv pip install agent-starter-pack
+        python -m uv venv && python -m uv pip install agent-starter-pack
         agent-starter-pack create $AGENT_NAME
         '';
         # Open editors for the following files by default, if they exist:
