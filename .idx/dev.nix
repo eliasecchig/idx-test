@@ -28,7 +28,7 @@
         source $HOME/.local/bin/env
         
         # Install the Agent Starter Pack
-        uv pip install agent-starter-pack
+        uv pip install agent-starter-pack --system
         agent-starter-pack create $WS_NAME
         '';
         # Open editors for the following files by default, if they exist:
