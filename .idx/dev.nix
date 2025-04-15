@@ -36,7 +36,7 @@
 
           echo "Creating Python virtual environment and installing packages..."
           uv venv && uv pip install agent-starter-pack
-          echo 'alias agent-starter-pack="uv run agent-starter-pack"' >> ~/.bashrc
+          echo 'alias agent-starter-pack="~/$WS_NAME/.venv/bin/agent-starter-pack"' >> ~/.bashrc
           source ~/.bashrc
 
           echo "Running agent starter pack creation..."
