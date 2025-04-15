@@ -22,9 +22,14 @@
       # Runs when a workspace is first created with this `dev.nix` file
       onCreate = {
         create-venv = ''
-        curl -LsSf https://astral.sh/uv/install.sh | sh  
-        source ~/.bashrc  # or ~/.zshrc depending on your shell
+        # Install uv if you don't have it
+        curl -LsSf https://astral.sh/uv/install.sh | sh
+        
+        source $HOME/.local/bin/env (sh, bash, zsh)
+        
+        # Install the Agent Starter Pack
         uv pip install agent-starter-pack
+        agent-starter-pack create $WS_NAME
         '';
         # Open editors for the following files by default, if they exist:
         default.openFiles = [ ];
