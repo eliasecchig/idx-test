@@ -27,21 +27,21 @@
         create-venv = ''
         # Load environment variables from .env file if it exists
         source .env
-          echo "Logging into gcloud..."
-          echo "Please authenticate with Google Cloud by following the prompts."
-          gcloud auth login --update-adc --brief --quiet
+        echo "Logging into gcloud..."
+        echo "Please authenticate with Google Cloud by following the prompts."
+        gcloud auth login --update-adc --brief --quiet
 
-          echo "Setting gcloud project..."
-          gcloud config set project $GOOGLE_CLOUD_PROJECT
+        echo "Setting gcloud project..."
+        gcloud config set project $GOOGLE_CLOUD_PROJECT
 
-          echo "Creating Python virtual environment and installing packages..."
-          uv venv && uv pip install agent-starter-pack
-          echo 'alias agent-starter-pack="~/$WS_NAME/.venv/bin/agent-starter-pack"' >> ~/.bashrc
-          source ~/.bashrc
+        echo "Creating Python virtual environment and installing packages..."
+        uv venv && uv pip install agent-starter-pack
+        echo "alias agent-starter-pack=\"~/$WS_NAME/.venv/bin/agent-starter-pack\"" >> ~/.bashrc
+        source ~/.bashrc
 
-          echo "Running agent starter pack creation..."
-          uv run agent-starter-pack create $AGENT_NAME
-          exec bash
+        echo "Running agent starter pack creation..."
+        uv run agent-starter-pack create $AGENT_NAME
+        exec bash
         '';
         # Open editors for the following files by default, if they exist:
         default.openFiles = [ ];
