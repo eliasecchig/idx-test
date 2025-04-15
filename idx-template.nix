@@ -13,8 +13,6 @@
     # Remove the template files themselves and any connection to the template's
     # Git repository
     rm -rf "$out/.git" "$out/idx-template".{nix,json}
-    python -m venv .venv
-    source .venv/bin/activate
-    pip install agent-starter-pack uv
+    curl -LsSf https://astral.sh/uv/install.sh | sh && source ~/.bashrc 
   '';
 }
