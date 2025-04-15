@@ -2,5 +2,20 @@
   "name": "Hello world",
   "description": "A template for a CLI program that prints 'hello world'",
   "icon": "https://www.gstatic.com/images/branding/productlogos/studio/v1/192px.svg",
-  "params": []
-}
+  "params": [
+    {
+      "id": "agent_name",
+      "name": "Agent Name",
+      "description": "The name of the agent being created or configured.",
+      "type": "string",
+      "required": true
+    },
+    {
+      "id": "gcp_project_id",
+      "name": "GCP Project ID",
+      "description": "The Google Cloud Platform Project ID where resources will be managed.",
+      "type": "string",
+      "required": true
+    }
+  ]
+}}
