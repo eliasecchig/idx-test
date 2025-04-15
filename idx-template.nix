@@ -16,6 +16,7 @@
     cat > "$out/.env" << EOF
     AGENT_NAME=${agent_name}
     GOOGLE_CLOUD_PROJECT=${google_cloud_project_id}
+    WS_NAME=${WS_NAME}
     EOF
 
     # Remove the template files themselves and any connection to the template's
