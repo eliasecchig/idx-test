@@ -25,7 +25,7 @@
         python -m venv .venv
         source .venv/bin/activate
         pip install agent-starter-pack uv
-        agent-starter-pack create $WS_NAME
+        agent-starter-pack create my-agent
         '';
         # Open editors for the following files by default, if they exist:
         default.openFiles = [ ];
