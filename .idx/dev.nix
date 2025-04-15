@@ -19,6 +19,7 @@
     extensions = [
       "ms-toolsai.jupyter"
       "ms-python.python"
+      "krish-r.vscode-toggle-terminal"
     ];
     workspace = {
       # Runs when a workspace is first created with this `dev.nix` file
@@ -26,10 +27,20 @@
         create-venv = ''
         # Load environment variables from .env file if it exists
         source .env
-        gcloud auth login --update-adc --brief
-        gcloud config set project $GOOGLE_CLOUD_PROJECT
-        uv venv && uv pip install agent-starter-pack
-        uv run agent-starter-pack create $AGENT_NAME 
+          echo "Logging into gcloud..."
+          gcloud auth login --update-adc --brief
+
+          echo "Setting gcloud project..."
+          gcloud config set project $GOOGLE_CLOUD_PROJECT
+
+          echo "Creating Python virtual environment and installing packages..."
+          uv venv && uv pip install agent-starter-pack
+
+          echo "Running agent starter pack creation..."
+          uv run agent-starter-pack create $AGENT_NAME
+
+          echo "Setup complete. Starting interactive shell..."
+          exec bash
         '';
         # Open editors for the following files by default, if they exist:
         default.openFiles = [ ];
