@@ -11,8 +11,8 @@
       "required": true
     },
     {
-      "id": "gcp_project_id",
-      "name": "GCP Project ID",
+      "id": "google_cloud_project_id",
+      "name": "Goole Cloud Project ID",
       "description": "The Google Cloud Platform Project ID where resources will be managed.",
       "type": "string",
       "required": true

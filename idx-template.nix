@@ -15,7 +15,7 @@
     # Create .env file with the parameter values
     cat > "$out/.env" << EOF
     AGENT_NAME=${agent_name}
-    GCP_PROJECT_ID=${gcp_project_id}
+    GOOGLE_CLOUD_PROJECT=${gcp_project_id}
     EOF
 
     # Remove the template files themselves and any connection to the template's
