@@ -29,7 +29,7 @@
         # python -m venv .venv
         # source .venv/bin/activate
         uv venv && uv pip install agent-starter-pack
-        agent-starter-pack create $AGENT_NAME
+        source .venv/bin/activate && agent-starter-pack create $AGENT_NAME
         '';
         # Open editors for the following files by default, if they exist:
         default.openFiles = [ ];
