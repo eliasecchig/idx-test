@@ -25,7 +25,7 @@
         # Install uv if you don't have it
         curl -LsSf https://astral.sh/uv/install.sh | sh
         
-        source $HOME/.local/bin/env (sh, bash, zsh)
+        source $HOME/.local/bin/env
         
         # Install the Agent Starter Pack
         uv pip install agent-starter-pack
