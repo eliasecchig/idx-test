@@ -26,12 +26,9 @@
         create-venv = ''
         # Load environment variables from .env file if it exists
         source .env
-        # gcloud config set project $GCP_PROJECT_ID
-        # gcloud auth application-default set-quota-project $GCP_PROJECT_ID
-        # python -m venv .venv
-        # source .venv/bin/activate
+        gcloud config set project $GCP_PROJECT_ID
         uv venv && uv pip install agent-starter-pack
-        uv run agent-starter-pack create $AGENT_NAME
+        uv run agent-starter-pack create $AGENT_NAME 
         '';
         # Open editors for the following files by default, if they exist:
         default.openFiles = [ ];
