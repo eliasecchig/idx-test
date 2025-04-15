@@ -28,7 +28,8 @@
         # Load environment variables from .env file if it exists
         source .env
           echo "Logging into gcloud..."
-          gcloud auth login --update-adc --brief --quiet
+          echo "Please authenticate with Google Cloud by following the prompts."
+          gcloud auth login --update-adc
 
           echo "Setting gcloud project..."
           gcloud config set project $GOOGLE_CLOUD_PROJECT
@@ -38,8 +39,6 @@
 
           echo "Running agent starter pack creation..."
           uv run agent-starter-pack create $AGENT_NAME
-
-          echo "Setup complete. Starting interactive shell..."
           exec bash
         '';
         # Open editors for the following files by default, if they exist:
