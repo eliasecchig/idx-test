@@ -41,6 +41,7 @@
 
         echo "Running agent starter pack creation..."
         uv run agent-starter-pack create $AGENT_NAME
+        code ~/$WS_NAME/$AGENT_NAME/README.md
         exec bash
         '';
         # Open editors for the following files by default, if they exist:
