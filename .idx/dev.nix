@@ -44,7 +44,7 @@
         exec bash
         '';
         # Open editors for the following files by default, if they exist:
-        default.openFiles = [ "~/$WS_NAME/$AGENT_NAME/README.md" ];
+        default.openFiles = [];
       };
       # To run something each time the workspace is (re)started, use the `onStart` hook
     };
