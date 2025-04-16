@@ -12,6 +12,7 @@
     pkgs.python311Packages.uv
     pkgs.gnumake
     pkgs.terraform
+    pkgs.gh
   ];
   # Sets environment variables in the workspace
   env = {};
