@@ -11,15 +11,7 @@
     # cp -r "$PWD"/. "$out" is a robust way to copy contents, including hidden files,
     # from the current directory ($PWD) to the destination ($out).
     # Assumes $out exists and is a directory. Add error handling.
-    if [ -z "${out:-}" ]; then
-      echo "Error: \$out variable is not set." >&2
-      exit 1
-    fi
     # Check if $out exists and is a directory, or try to create it
-    if [ ! -d "$out" ]; then
-        echo "Destination directory '$out' does not exist. Creating it."
-        mkdir -p "$out" || { echo "Error: Could not create directory '$out'"; exit 1; }
-    fi
     
     echo "Copying contents of '$PWD' to '$out'..."
     # Using shopt -s dotglob would also work with cp *, but "$PWD"/ . "$out" is often cleaner
@@ -49,7 +41,7 @@
     echo "Creating .env file at '$out/.env'..."
     cat > "$out/.env" << EOF
     AGENT_NAME=$original_ws_name
-    GOOGLE_CLOUD_PROJECT=${google_cloud_project_id:-} # Use default value if unset
+    GOOGLE_CLOUD_PROJECT=${google_cloud_project_id} # Use default value if unset
     WS_NAME=$WS_NAME
     EOF
     # Check if the heredoc was written successfully
