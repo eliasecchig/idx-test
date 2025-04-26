@@ -5,7 +5,7 @@
   # Shell script that produces the final environment
   bootstrap = ''
     # Store the original WS_NAME before modifying it
-    original_ws_name="${WS_NAME:-}" # Use default value if WS_NAME is unset
+    original_ws_name="${WS_NAME}" 
     
     # --- Fix 1: Copy contents of current directory ---
     # cp -r "$PWD"/. "$out" is a robust way to copy contents, including hidden files,
