@@ -39,10 +39,9 @@
         echo "Creating Python virtual environment and installing packages..."
         uv tool install agent-starter-pack
         uv tool update-shell
-        source ~/.bashrc
 
         echo "Running agent starter pack creation..."
-        agent-starter-pack create $AGENT_NAME
+        uv tool run agent-starter-pack create $AGENT_NAME
         code ~/$WS_NAME/$AGENT_NAME/README.md
         exec bash
         '';
