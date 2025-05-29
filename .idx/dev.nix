@@ -38,7 +38,6 @@
 
         echo "Creating Python virtual environment and installing packages..."
         uv tool install agent-starter-pack
-        export PATH="/home/user/.local/bin:$PATH
 
         echo "Running agent starter pack creation..."
         uv tool run agent-starter-pack create $AGENT_NAME
