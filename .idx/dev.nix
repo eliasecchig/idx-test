@@ -7,9 +7,7 @@
 
   # Use https://search.nixos.org/packages to find packages
   packages = [
-    pkgs.python311
-    pkgs.python311Packages.pip
-    pkgs.python311Packages.uv
+    pkgs.uv
     pkgs.gnumake
     pkgs.terraform
     pkgs.gh
