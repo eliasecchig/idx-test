@@ -36,11 +36,8 @@
         echo "Setting gcloud project..."
         gcloud config set project $GOOGLE_CLOUD_PROJECT
 
-        echo "Creating Python virtual environment and installing packages..."
-        uv tool install agent-starter-pack
-
         echo "Running agent starter pack creation..."
-        uv tool run agent-starter-pack create $AGENT_NAME
+        uvx agent-starter-pack create my-awesome-agent
         code ~/$WS_NAME/$AGENT_NAME/README.md
         exec bash
         '';
