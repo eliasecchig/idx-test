@@ -37,12 +37,10 @@
         gcloud config set project $GOOGLE_CLOUD_PROJECT
 
         echo "Creating Python virtual environment and installing packages..."
-        uv venv && uv pip install agent-starter-pack
-        echo "alias agent-starter-pack=\"~/$WS_NAME/.venv/bin/agent-starter-pack\"" >> ~/.bashrc
-        source ~/.bashrc
+        uv tool install agent-starter-pack
 
         echo "Running agent starter pack creation..."
-        uv run agent-starter-pack create $AGENT_NAME
+        agent-starter-pack create $AGENT_NAME
         code ~/$WS_NAME/$AGENT_NAME/README.md
         exec bash
         '';
