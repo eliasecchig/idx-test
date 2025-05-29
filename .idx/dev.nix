@@ -38,6 +38,7 @@
 
         echo "Creating Python virtual environment and installing packages..."
         uv tool install agent-starter-pack
+        uv tool update-shell
 
         echo "Running agent starter pack creation..."
         agent-starter-pack create $AGENT_NAME
