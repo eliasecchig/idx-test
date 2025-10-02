@@ -27,7 +27,7 @@
         create-venv = ''
         # Load environment variables from .env file if it exists
         source .env
-
+        
         echo "Running agent starter pack creation..."
         uvx agent-starter-pack create $WS_NAME
         code ~/$WS_NAME/$WS_NAME/README.md
