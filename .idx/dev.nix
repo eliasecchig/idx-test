@@ -39,6 +39,9 @@
         echo ""
 
         auth_status=$(gcloud auth list --quiet 2>&1)
+
+        echo ""
+        echo "⚙️  We will now set the project you want to use..."
         gcloud config get project
 
         echo ""
