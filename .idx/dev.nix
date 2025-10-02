@@ -6,7 +6,7 @@
   channel = "stable-24.11"; # or "unstable"
 
   # Use https://search.nixos.org/packages to find packages
-  packages = [https://github.com/eliasecchig/idx-test/tree/main/.idx
+  packages = [
     pkgs.uv
     pkgs.gnumake
     pkgs.terraform
