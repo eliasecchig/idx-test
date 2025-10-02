@@ -37,16 +37,17 @@
         echo "   1️⃣  You are logged in to gcloud"
         echo "   2️⃣  You have selected the correct project"
         echo ""
-        echo "Current authentication status:"
-        echo "────────────────────────────────────────────────────────────"
 
-        gcloud auth list
+        auth_status=$(gcloud auth list --quiet 2>&1)
 
-        echo ""
-        echo "Current project configuration:"
-        echo "────────────────────────────────────────────────────────────"
-
-        gcloud config get project
+        project=$(gcloud config get project)
+        if [[ "$project" == *"monospace"* ]]; then
+          echo ""
+          echo "⚠️  Project contains 'monospace' - retrying..."
+          sleep 2
+          project=$(gcloud config get project)
+        fi
+        echo "$project"
 
         echo ""
         echo "💡 Need to setup? Run these commands:"
