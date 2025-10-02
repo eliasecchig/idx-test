@@ -6,7 +6,7 @@
   channel = "stable-24.11"; # or "unstable"
 
   # Use https://search.nixos.org/packages to find packages
-  packages = [
+  packages = [https://github.com/eliasecchig/idx-test/tree/main/.idx
     pkgs.uv
     pkgs.gnumake
     pkgs.terraform
@@ -27,16 +27,10 @@
         create-venv = ''
         # Load environment variables from .env file if it exists
         source .env
-        echo "Logging into gcloud..."
-        echo "Please authenticate with Google Cloud by following the prompts."
-        #gcloud auth login --update-adc --brief --quiet
-
-        echo "Setting gcloud project..."
-        gcloud config set project $GOOGLE_CLOUD_PROJECT
 
         echo "Running agent starter pack creation..."
-        uvx agent-starter-pack create my-awesome-agent
-        code ~/$WS_NAME/$AGENT_NAME/README.md
+        uvx agent-starter-pack create $WS_NAME
+        code ~/$WS_NAME/$WS_NAME/README.md
         exec bash
         '';
         # Open editors for the following files by default, if they exist:
