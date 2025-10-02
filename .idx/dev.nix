@@ -26,8 +26,34 @@
         create-venv = ''
         # Load environment variables from .env file if it exists
         source .env
+
+        # Beautiful prints for gcloud setup
+        echo ""
+        echo "╔════════════════════════════════════════════════════════════╗"
+        echo "║                  🔐 GCLOUD SETUP REQUIRED                  ║"
+        echo "╚════════════════════════════════════════════════════════════╝"
+        echo ""
+        echo "📝 Before proceeding, please ensure:"
+        echo "   1️⃣  You are logged in to gcloud"
+        echo "   2️⃣  You have selected the correct project"
+        echo ""
+        echo "Current authentication status:"
+        echo "────────────────────────────────────────────────────────────"
+
         gcloud auth list
+
+        echo ""
+        echo "Current project configuration:"
+        echo "────────────────────────────────────────────────────────────"
+
         gcloud config get project
+
+        echo ""
+        echo "💡 Need to setup? Run these commands:"
+        echo "   → gcloud auth login"
+        echo "   → gcloud config set project YOUR_PROJECT_ID"
+        echo ""
+
         echo "Running agent starter pack creation..."
         uvx agent-starter-pack create $WS_NAME
         code ~/$WS_NAME/$WS_NAME/README.md
