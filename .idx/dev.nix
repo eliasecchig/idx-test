@@ -17,9 +17,8 @@
   idx = {
     # Search for the extensions you want on https://open-vsx.org/ and use "publisher.id"
     extensions = [
-      "ms-toolsai.jupyter"
-      "ms-python.python"
-      "krish-r.vscode-toggle-terminal"
+      # "ms-toolsai.jupyter"
+      # "ms-python.python"
     ];
     workspace = {
       # Runs when a workspace is first created with this `dev.nix` file
