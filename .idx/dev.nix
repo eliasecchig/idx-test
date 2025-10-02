@@ -39,15 +39,7 @@
         echo ""
 
         auth_status=$(gcloud auth list --quiet 2>&1)
-
-        project=$(gcloud config get project)
-        if [[ "$project" == *"monospace"* ]]; then
-          echo ""
-          echo "⚠️  Project contains 'monospace' - retrying..."
-          sleep 2
-          project=$(gcloud config get project)
-        fi
-        echo "$project"
+        gcloud config get project
 
         echo ""
         echo "💡 Need to setup? Run these commands:"
