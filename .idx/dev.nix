@@ -51,7 +51,7 @@
         echo ""
 
         echo "Running agent starter pack creation..."
-        uvx agent-starter-pack create $WS_NAME
+        uvx agent-starter-pack create $WS_NAME -ag -a adk@$AGENT_NAME -d agent_engine
         code ~/$WS_NAME/$WS_NAME/README.md
         exec bash
         '';
