@@ -15,6 +15,7 @@
 
     # Create .env file with the parameter values
     cat > "$out/.env" << EOF
+    AGENT_NAME=${agent_name}
     WS_NAME=$WS_NAME
     EOF
 
