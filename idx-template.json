@@ -1,7 +1,14 @@
 {
-  "name": "Agent Starter Pack",
-  "description": "Production-ready Gen AI Agent templates for Google Cloud. Addressing common challenges (Deployment & Operations, Evaluation, Customization, Observability) in building and deploying GenAI agents.",
+  "name": "Agent Garden",
+  "description": "Agent Garden is a library in the Google Cloud console where you can find and explore sample agents and tools that are designed to accelerate your development.",
   "icon": "https://github.com/eliasecchig/idx-test/blob/main/.idx/icon.png?raw=true",
   "params": [
+    {
+      "id": "adk_agent_name",
+      "name": "Agent Name",
+      "description": "The name of the adk agent being created, stored in adk-samples/python.",
+      "type": "string",
+      "required": true
+    },
   ]
 }
