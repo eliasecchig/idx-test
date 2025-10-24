@@ -11,7 +11,7 @@
       "required": true
     },
     {
-      "id": "region",
+      "id": "deployment_region",
       "name": "Region",
       "description": "The Google Cloud region where the agent will be deployed.",
       "type": "string",
